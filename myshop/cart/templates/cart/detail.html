@@ -27,7 +27,7 @@
                     <!--<a href="{{ product.get_absolute_url }}">-->
                         <!--<img src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">-->
                     <!--</a>-->
-                    {% thumbnail product.image "400" as im %}
+                    {% thumbnail product.image "200" as im %}
                         <a href="{{ product.get_absolute_url }}">
                             <img src="{% if product.image %}{{ im.url }}{%else %}{% static "img/no_image.png" %}{% endif %}">
                         </a>

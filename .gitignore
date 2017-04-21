@@ -1,2 +1,4 @@
 *.pyc
 .idea/*
+config_email.py
+*/media/*
