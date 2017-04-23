@@ -4,10 +4,7 @@ from django.core.mail import EmailMessage
 from django.conf import settings
 from paypal.standard.models import ST_PP_COMPLETED
 from paypal.standard.ipn.signals import valid_ipn_received
-try:
-    import weasyprint
-except:
-    pass
+
 from io import BytesIO
 from orders.models import Order
 
@@ -28,8 +25,8 @@ def payment_notification(sender, **kwargs):
         subject = 'My Shop - Invoice nr. {}'.format(order.id)
         message = 'Please, find attached the invoice for your recent purchase.'
         email = EmailMessage(subject, message, settings.MAIL_ADMIN, [order.email])
-
-        if not is_windows():
+        try:
+            import weasyprint
             # generate PDF
             html = render_to_string('orders/order/pdf.html', {'order': order})
             out = BytesIO()
@@ -40,7 +37,7 @@ def payment_notification(sender, **kwargs):
             email.attach('order_{}.pdf'.format(order.id),
                          out.getvalue(),
                          'application/pdf')
-        else:
+        except:
             html = render_to_string('orders/order/pdf.html', {'order': order})
             email.attach('order_{}.html'.format(order.id),
                          html,
