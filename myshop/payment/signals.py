@@ -38,6 +38,7 @@ def payment_notification(sender, **kwargs):
                          out.getvalue(),
                          'application/pdf')
         except:
+            print("payment_notification exception, so output a html instead!")
             html = render_to_string('orders/order/pdf.html', {'order': order})
             email.attach('order_{}.html'.format(order.id),
                          html,

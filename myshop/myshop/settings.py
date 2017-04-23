@@ -36,11 +36,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'sorl.thumbnail',
-    'paypal.standard.ipn',
     'shop',
     'cart',
     'orders',
     'payment',
+    'paypal.standard.ipn',
 ]
 
 MIDDLEWARE_CLASSES = [

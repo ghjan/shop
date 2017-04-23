@@ -81,7 +81,9 @@ person账号初始化的balance是$9999.
 目前为止PyGTK只支持py2.7,所以确保在python2.7的环境
 否则就只能去掉WeasyPrint
 
-# 运行：
+# 发布运行：
+因为某些app要用到static下面的静态文件，所以需要运行下面的命令
+python manage.py collectstatic
 开4个console
 1.ngrok
 ngrok start  myshop-http
