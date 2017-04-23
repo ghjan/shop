@@ -1,4 +1,8 @@
 *.pyc
 .idea/*
+shop.iml
+config_pay.py
 config_email.py
 */media/*
+*.sqlite3
+prepare/*

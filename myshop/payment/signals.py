@@ -40,6 +40,12 @@ def payment_notification(sender, **kwargs):
             email.attach('order_{}.pdf'.format(order.id),
                          out.getvalue(),
                          'application/pdf')
+        else:
+            html = render_to_string('orders/order/pdf.html', {'order': order})
+            email.attach('order_{}.html'.format(order.id),
+                         html,
+                         'text/html; charset=utf-8')
+
         # send e-mail
         email.send()
 
