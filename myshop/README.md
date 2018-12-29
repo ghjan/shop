@@ -85,28 +85,29 @@ person账号初始化的balance是$9999.
 因为某些app要用到static下面的静态文件，所以需要运行下面的命令
 python manage.py collectstatic
 开4个console
-###1.ngrok
+
+### 1.ngrok
 ```
 ngrok start  myshop-http
 ```
 
 这时候会显示外网url，以后就用这个url访问myshop购物
 
-###2.django myshop
+### 2.django myshop
 ```
 workon myshop
 cd /d e:/django_projects/shop/myshop
 python manage.py runserver 0.0.0.0:8000
 ```
 
-###3.rabbitmq server
+### 3.rabbitmq server
 ```
 cd /d D:\RabbitMQ Server\rabbitmq_server-3.6.9\sbin
 rabbitmq-server start
 ```
 或者启动service
 
-###4.celery
+### 4.celery
 ```
 workon myshop
 cd /d e:/django_projects/shop/myshop
