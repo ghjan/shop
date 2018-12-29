@@ -1,5 +1,5 @@
 *.pyc
-.idea/*
+.idea/
 shop.iml
 config_pay.py
 config_email*.py
